@@ -1,0 +1,284 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+.content {
+  max-width: 1440px;
+  margin: 0px auto;
+}
+@font-face {
+  font-family: "SpaceMono Regular";
+  src: url("./fonts/SpaceMono-Regular.ttf");
+}
+@font-face {
+  font-family: "SpaceMono Bold";
+  src: url("./fonts/SpaceMono-Bold.ttf");
+}
+body {
+  background-color: hsl(185, 41%, 84%);
+}
+
+/* ----------------------------------------------------------------------
+  VARIABLES :
+  DESKTOP */
+$width-container: 48%;
+$height-inputs: 44px;
+$input-font-size: 19px;
+$input-font-color: hsl(184, 14%, 56%);
+$input-font-family: "SpaceMono Bold", sans-serif;
+$subtitle-color: hsl(186, 14%, 43%);
+$tips-width: 117px;
+$tips-height: 47px;
+$tips-font-size: 24px;
+$tips-margin-bottom: 15px;
+$border-radius-input: 5px 5px;
+$bg-tips-result: hsl(183, 100%, 15%);
+
+/* MOBILE */
+$width-container-mobile: 100%;
+/*-----------------------------------------------------------------------*/
+.logo-container {
+  text-align: center;
+}
+#logo {
+  height: 56px;
+  margin-top: 161px;
+  margin-bottom: 86px;
+}
+.calculator-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 858px;
+  height: 418px;
+  font-family: $input-font-family;
+  margin: 0px auto;
+  margin-bottom: 237px;
+  padding: 31px;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px 20px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.input-container,
+.result-container {
+  width: $width-container;
+}
+.input-container {
+  box-sizing: border-box;
+  padding: 16px;
+}
+.subtitle {
+  color: $subtitle-color;
+  margin-bottom: 12px;
+}
+.group-container {
+  display: flex;
+  background-color: hsl(189, 41%, 97%);
+  margin-top: 7px;
+  border: none;
+  border-radius: $border-radius-input;
+  overflow: hidden;
+}
+.invalidState {
+  border: 2px solid hsl(0, 82%, 70%);
+  margin-bottom: -4px;
+}
+/* Bill input container --------------------------------------------------*/
+.bill-container:focus-within {
+  border: 2px solid hsl(172, 67%, 45%);
+  border-radius: 5px 5px;
+  margin-bottom: -4px;
+}
+.icon {
+  height: $height-inputs;
+  width: 10%;
+  text-align: center;
+  vertical-align: middle;
+}
+.icon img {
+  height: 18px;
+  margin: 13px auto;
+}
+#bill,
+#numberOfPeople {
+  height: $height-inputs;
+  width: 90%;
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  color: $input-font-color;
+  padding-right: 16px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  text-align: right;
+}
+/* END Bill input container --------------------------------------------------*/
+
+/* TIP buttons container -----------------------------------------------------*/
+.selectTipContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.selectTipContainer {
+  margin-top: 16px;
+  margin-bottom: 25px;
+}
+.selectTip {
+  display: inline-block;
+  margin-top: 41px;
+}
+.tip,
+#customTip {
+  width: $tips-width;
+  height: $tips-height;
+  font-family: $input-font-family;
+  font-size: $tips-font-size;
+  margin-bottom: $tips-margin-bottom;
+  border: none;
+  border-radius: $border-radius-input;
+  text-align: center;
+}
+.tip {
+  color: #fff;
+  background-color: $bg-tips-result;
+  transition: all 300ms;
+}
+.tip:hover {
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+#customTip {
+  background-color: hsl(189, 41%, 97%);
+}
+#customTip:focus {
+  width: 113px;
+  height: 43px;
+  border: 2px solid hsl(172, 67%, 45%);
+  border-radius: 5px 5px;
+  outline: none;
+}
+.active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+/* END TIP buttons container -----------------------------------------------------*/
+
+/* Verifier elements -------------------------------------------------------------*/
+.subtitlePeople-verifier,
+.subtitleBill-verifier {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -10px;
+}
+.invalid-data,
+.invalid-data-bill,
+.zero-data,
+.zero-data-bill {
+  display: none;
+  color: hsl(0, 82%, 70%);
+}
+/* END Verifier elements ---------------------------------------------------------*/
+
+.result-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $bg-tips-result;
+  border: none;
+  border-radius: 15px 15px;
+  padding: 39px;
+}
+.results {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 59px;
+}
+.tip-result-amount-container,
+.tip-result-total-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.subtitleResult {
+  color: #fff;
+}
+.unit {
+  font-size: 13px;
+  color: hsl(184, 14%, 56%);
+}
+.result {
+  font-size: 39px;
+  color: hsl(172, 67%, 45%);
+}
+#reset {
+  width: 100%;
+  height: $tips-height;
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  color: $bg-tips-result;
+  background-color: hsl(186, 14%, 43%);
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px 5px;
+  transition: all 300ms;
+}
+#reset:hover {
+  background-color: hsl(185, 41%, 84%);
+  cursor: pointer;
+}
+.enable {
+  background-color: hsl(172, 67%, 45%);
+}
+
+/*MEDIA QUERIES ----------------------------------------------------------------------------------------*/
+@media (max-width: 935px) {
+  .calculator-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 85%;
+    height: auto;
+  }
+  .input-container,
+  .result-container {
+    width: $width-container-mobile;
+  }
+}
+@media (max-width: 375px) {
+  .calculator-container {
+    width: 92%;
+    padding: 10px;
+  }
+  .result-container {
+    width: 91%;
+    margin: 0px auto;
+  }
+  .tip,
+  #customTip {
+    width: 46%;
+    font-size: 20px;
+  }
+  #customTip:focus{
+    width: 45%;
+  }
+  .result-container {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  .result {
+    font-size: 28px;
+  }
+  #reset {
+    margin-top: 50px;
+  }
+}
